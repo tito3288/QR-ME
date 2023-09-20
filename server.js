@@ -1,8 +1,8 @@
-import express from "express";
-import bodyParser from "body-parser";
-import qr from "qr-image";
-import cors from "cors";
-import path from "path"; // <-- Import path module
+const express = require("express");
+const bodyParser = require("body-parser");
+const qr = require("qr-image");
+const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
