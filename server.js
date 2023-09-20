@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Serve the built React app
-app.use(express.static(path.join(__dirname, "client/build")));
+// app.use(express.static(path.join(__dirname, "client/build")));
 
 app.post("/generate-qr", (req, res) => {
   const { text } = req.body;
@@ -20,9 +20,14 @@ app.post("/generate-qr", (req, res) => {
 });
 
 // Catch-all route for handling client-side routing
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 app.listen(process.env.PORT || 4000, () => {
   console.log(`Server is running on http://localhost:4000`);
