@@ -20,9 +20,9 @@ app.post("/generate-qr", (req, res) => {
 });
 
 // Catch-all route for handling client-side routing
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname + "/client/build/index.html"));
+// });
 
 app.listen(process.env.PORT || 4000, () => {
   console.log(`Server is running on http://localhost:4000`);
