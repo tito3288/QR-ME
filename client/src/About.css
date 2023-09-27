@@ -1,0 +1,38 @@
+.about-page {
+  height: 100%;
+  background-color: #beb2a9;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+.about-page p {
+  font-size: 30px;
+  font-family: "Major Mono Display", monospace;
+}
+
+@media screen and (min-width: 1280px) and (min-height: 800px) and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 600px) {
+  .about-page {
+    height: 100%;
+    background-color: #beb2a9;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 12rem;
+    padding-bottom: 3rem;
+    text-align: center;
+  }
+
+  .about-page p {
+    font-size: 20px;
+  }
+}
